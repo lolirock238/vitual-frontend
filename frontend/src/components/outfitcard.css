@@ -1,0 +1,13 @@
+/* src/components/OutfitCard.css */
+.outfit-card {
+  background: #ffe4f0;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.outfit-card img {
+  max-width: 50px;
+  margin: 0 3px;
+  border-radius: 5px;
+}
