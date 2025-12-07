@@ -1,0 +1,8 @@
+.wardrobe-page {
+  padding: 1rem 0;
+}
+.wardrobe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}

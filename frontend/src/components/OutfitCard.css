@@ -1,0 +1,28 @@
+.outfit-card {
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.outfit-card:hover {
+  transform: scale(1.05);
+  border-color: #ff69b4;
+}
+.outfit-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.outfit-info {
+  padding: 0.5rem;
+}
+.outfit-info h3 {
+  margin: 0 0 0.5rem;
+}
+.outfit-items span {
+  margin-right: 0.3rem;
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
