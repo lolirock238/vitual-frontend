@@ -65,3 +65,6 @@ export const addItemImage = (imageBase64, item_id) =>
   });
 
 export const fetchItemImages = () => getJSON(`${BASE}/item_images/`);
+// Outfit-Item associations
+export const fetchOutfitItems = () => getJSON(`${BASE}/outfit_items/`);
+
