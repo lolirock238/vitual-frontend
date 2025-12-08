@@ -1,32 +1,59 @@
 import React from 'react';
 import './OutfitCard.css';
 
-const API_URL = 'http://localhost:8000';
+function OutfitCard({ outfit, onDelete }) {
+  const handleDelete = async () => {
+    if (window.confirm(`Are you sure you want to delete "${outfit.name}"?`)) {
+      try {
+        const response = await fetch(`http://localhost:8000/outfits/${outfit.id}`, {
+          method: 'DELETE',
+        });
+        if (response.ok && onDelete) {
+          onDelete(outfit.id);
+        }
+      } catch (error) {
+        console.error('Error deleting outfit:', error);
+      }
+    }
+  };
 
-export default function OutfitCard({ outfit, wardrobeItems, CATEGORIES }) {
   return (
     <div className="outfit-card">
-      <div className="outfit-image">
-        {outfit.image_url ? (
-          <img src={`${API_URL}${outfit.image_url}`} alt={outfit.name} />
-        ) : (
-          <span>No Image</span>
+      <div className="outfit-header">
+        <h3 className="outfit-name">{outfit.name}</h3>
+        <span className="outfit-count">{outfit.items.length} items</span>
+      </div>
+
+      {outfit.image_url && (
+        <div className="outfit-image-container">
+          <img
+            src={`http://localhost:8000${outfit.image_url}`}
+            alt={outfit.name}
+            className="outfit-image"
+          />
+        </div>
+      )}
+
+      <div className="outfit-items-preview">
+        {outfit.itemDetails && outfit.itemDetails.slice(0, 3).map((item) => (
+          <div key={item.id} className="outfit-item-thumbnail">
+            <img
+              src={`http://localhost:8000${item.image_url}`}
+              alt="Item"
+              className="thumbnail-image"
+            />
+          </div>
+        ))}
+        {outfit.items.length > 3 && (
+          <div className="more-items">+{outfit.items.length - 3}</div>
         )}
       </div>
-      <div className="outfit-info">
-        <h3>{outfit.name}</h3>
-        <div className="outfit-items">
-          {outfit.items &&
-            outfit.items.map((itemId) => {
-              const item = wardrobeItems.find((i) => i.id === itemId);
-              return (
-                <span key={itemId}>
-                  {CATEGORIES.find((c) => c.id === item?.category)?.name}
-                </span>
-              );
-            })}
-        </div>
-      </div>
+
+      <button className="delete-outfit-button" onClick={handleDelete}>
+        Delete Outfit
+      </button>
     </div>
   );
 }
+
+export default OutfitCard;

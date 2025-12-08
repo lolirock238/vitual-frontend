@@ -1,22 +1,64 @@
-.outfits-page h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.outfits-page {
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 32px;
+  color: #6b4c7a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  font-size: 16px;
+  color: #999;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.empty-title {
+  font-size: 28px;
+  color: #6b4c7a;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.empty-text {
+  font-size: 16px;
+  color: #999;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 .outfits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
 }
-.no-outfits {
-  text-align: center;
-  margin-top: 2rem;
-}
-.no-outfits button {
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 0.5rem;
+
+@media (max-width: 768px) {
+  .outfits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }

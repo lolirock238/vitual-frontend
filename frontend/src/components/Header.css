@@ -1,37 +1,53 @@
 .header {
-  background-color: #ffffff;
-  border-bottom: 2px solid #e6e6e6;
+  background: linear-gradient(135deg, #ffd4e5 0%, #c9e4ff 100%);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
 }
+
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 28px;
+  color: #6b4c7a;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-.header-buttons button {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
+
+.header-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b4c7a;
   cursor: pointer;
-  font-weight: bold;
-  background-color: #f5f5f5;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
 }
-.header-buttons button:hover {
-  background-color: #ddd;
+
+.nav-button:hover {
+  background: #fff5f8;
+  border-color: #ffb6d9;
+  transform: translateY(-2px);
 }
-.header-buttons .active {
-  background-color: #ff69b4;
+
+.nav-button.active {
+  background: #ffb6d9;
   color: white;
+  border-color: #ffb6d9;
 }

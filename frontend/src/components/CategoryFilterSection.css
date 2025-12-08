@@ -1,0 +1,45 @@
+.category-filter-section {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.filter-title {
+  font-size: 18px;
+  color: #6b4c7a;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-button {
+  padding: 10px 20px;
+  background: #f5f0ff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: #6b4c7a;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background: #e8d4ff;
+  border-color: #d4bbff;
+  transform: translateY(-2px);
+}
+
+.category-button.active {
+  background: linear-gradient(135deg, #ffb6d9 0%, #d4bbff 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(212, 187, 255, 0.3);
+}

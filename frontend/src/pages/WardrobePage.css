@@ -1,8 +1,54 @@
 .wardrobe-page {
-  padding: 1rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.wardrobe-grid {
+
+.items-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.items-title {
+  font-size: 24px;
+  color: #6b4c7a;
+  margin-bottom: 25px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.items-count {
+  font-size: 16px;
+  color: #999;
+  font-weight: 400;
+}
+
+.items-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.loading-message,
+.empty-message {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.empty-message {
+  background: linear-gradient(135deg, #fff5f8 0%, #f0f4ff 100%);
+  border-radius: 15px;
+  color: #6b4c7a;
+}
+
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
 }
